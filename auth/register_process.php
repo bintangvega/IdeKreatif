@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
     $sql = "INSERT INTO users (username, name, password)
-    VALUES ('$username', '$name', $hashedPassword')";
+    VALUES ('$username', '$name', '$hashedPassword')";
     if ($conn->query($sql) === TRUE) {
         // Simpan notifikasi ke dalam session
         $_SESSION['notification'] = [
@@ -19,11 +19,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         ];
     } else {
         $_SESSION['notification'] = [
-            'type' => 'denger',
+            'type' => 'danger',
             'message' => 'Gagal Regitrasi: ' . mysqli_error($conn)
         ];
     }
-    header('LOcation: login.php');
+    header('Location: login.php');
     exit();
 }
 

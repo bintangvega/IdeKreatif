@@ -4,7 +4,7 @@
 $host = "localhost"; // Nama host server database
 $username = "root"; // Username untuk akses database
 $password = ""; // Password untuk akses database
-$database = "idekreatif"; // Nama database yang digunakan
+$database = "idekreatiff"; // Nama database yang digunakan
 
 // Membuat koneksi ke database menggunakan MYSQLi
 $conn = mysqli_connect($host, $username, $password, $database);
